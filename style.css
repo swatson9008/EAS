@@ -2,6 +2,10 @@ body {
     background-color: lightsteelblue;
 }
 
+h1 {
+    text-align: center;
+}
+
 #mainContainer {
     margin-top: 100px;
     text-align: center;
@@ -18,6 +22,7 @@ body {
     
   }
 
-  div.cell:hover {
-    background-color:black;
+#clearbtn {
+    text-align: center;
+    margin-top: 20px;
 }
