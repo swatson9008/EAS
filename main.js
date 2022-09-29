@@ -4,10 +4,15 @@ const container = document.getElementById("mainContainer");
 let rows = document.getElementsByClassName("gridRow");
 let cells = document.getElementsByClassName("cell");
 
+
+
 const clearButton = document.getElementById("clearbtn");
 const gridChange = document.getElementById("gridSize");
+const rainbowC = document.getElementById("rainbowBtn");
 
 let colorValue = "black"
+
+//const rainbowValue = ["green", "blue", "red", "yellow", "cyan", "orange", "magenta"];
 
 //let startingSize = 30;
 
@@ -35,7 +40,18 @@ function makeColumns (cellNum){
             clearButton.addEventListener('click', clearCanvas);
             function clearCanvas(){   
                 newCell.style.backgroundColor="white"};
+
+            //rainbow colors
+            rainbowC.addEventListener('click', rainbowRandomize);
+            function rainbowRandomize() {
+            let rainbowValue = '#'+Math.floor(Math.random()*16777215).toString(16);
+            newCell.addEventListener('mouseover', changeColor)
+            function changeColor(){
+                newCell.style.backgroundColor=rainbowValue;
+            }
             
+            
+            }
         }
     }
 }
@@ -53,7 +69,6 @@ standardGrid();
 
 //clear grid function
 function clearGrid() {
-    const gridMap = Array.from(container.childNodes);
     gridMap.forEach((element) => {
       container.removeChild(element);
     });
@@ -65,7 +80,6 @@ function sizeChange(){
     let newSize = prompt("Enter the size of the canvas");
     let wantedSize = parseInt(newSize);
     if (wantedSize <= 100 && wantedSize > 1) {
-       //wantedSize = startingSize;
        function alteredGrid(){
         makeRows(wantedSize)
         makeColumns(wantedSize)
@@ -80,4 +94,10 @@ function sizeChange(){
         alert("Please enter a number between 1 and 100")
     }
 }
+
+
+
+
+//rainbow colors
+
 
