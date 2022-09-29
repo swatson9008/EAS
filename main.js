@@ -7,6 +7,8 @@ let cells = document.getElementsByClassName("cell");
 const clearButton = document.getElementById("clearbtn");
 const gridChange = document.getElementById("gridSize");
 
+let colorValue = "black"
+
 //let startingSize = 30;
 
 //lets make a row
@@ -23,10 +25,10 @@ function makeColumns (cellNum){
         for (g = 0; g < cellNum; g++){
             let newCell = document.createElement("div");
             rows[g].appendChild(newCell).className = "cell";
-            /// function that detects mouseover and changes color
+            //function that detects mouseover and changes color
             newCell.addEventListener('mouseover', changeColor)
             function changeColor(){
-                newCell.style.backgroundColor="black";
+                newCell.style.backgroundColor=colorValue;
             }
 
             //clear canvas
@@ -49,6 +51,7 @@ function standardGrid () {
 //makes a grid
 standardGrid();
 
+//clear grid function
 function clearGrid() {
     const gridMap = Array.from(container.childNodes);
     gridMap.forEach((element) => {
@@ -56,6 +59,7 @@ function clearGrid() {
     });
   }
 
+//changes grid size
 gridChange.addEventListener('click', sizeChange);
 function sizeChange(){
     let newSize = prompt("Enter the size of the canvas");
@@ -76,8 +80,3 @@ function sizeChange(){
         alert("Please enter a number between 1 and 100")
     }
 }
-
-/*function alteredGrid (){
-    makeRows(startingSize);
-    makeColumns(startingSize);
-}*/
