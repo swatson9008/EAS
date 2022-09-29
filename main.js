@@ -52,6 +52,7 @@ function makeColumns (cellNum){
             
             
             }
+            
         }
     }
 }
@@ -69,6 +70,7 @@ standardGrid();
 
 //clear grid function
 function clearGrid() {
+    const gridMap = Array.from(container.childNodes);
     gridMap.forEach((element) => {
       container.removeChild(element);
     });
