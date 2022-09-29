@@ -80,3 +80,4 @@ function sizeChange(){
         alert("Please enter a number between 1 and 100")
     }
 }
+
