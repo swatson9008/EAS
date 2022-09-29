@@ -30,6 +30,7 @@ function makeColumns (cellNum){
         for (g = 0; g < cellNum; g++){
             let newCell = document.createElement("div");
             rows[g].appendChild(newCell).className = "cell";
+            
             //function that detects mouseover and changes color
             newCell.addEventListener('mouseover', changeColor)
             function changeColor(){
@@ -100,6 +101,5 @@ function sizeChange(){
 
 
 
-//rainbow colors
 
 
