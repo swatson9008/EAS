@@ -60,7 +60,7 @@ gridChange.addEventListener('click', sizeChange);
 function sizeChange(){
     let newSize = prompt("Enter the size of the canvas");
     let wantedSize = parseInt(newSize);
-    if (wantedSize <= 100 && wantedSize > 0) {
+    if (wantedSize <= 100 && wantedSize > 1) {
        //wantedSize = startingSize;
        function alteredGrid(){
         makeRows(wantedSize)
